@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content ="ie=edge">
+    <style>
+    body {
+    background-color: #f0f0f0;
+    font-family: Helvetica;
+    }
+
+    main {
+    width: 80%;
+    max-width: 950px;
+    border: 1px gray solid;
+    margin: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    }
+
+    header {
+    margin-top: 0;
+    padding: 5px;
+    background: white;
+    color: black;
+    }
+
+    .banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    }
+    </style>
+
+
+
+    {% block head %} {% endblock %}
+</head>
+<body>
+    {% block body %} {% endblock %}
+</body>
+</html>

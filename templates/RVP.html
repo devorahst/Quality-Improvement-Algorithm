@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>RVP</title>
+
+    <script id="test">
+        function displayQuestion(answer) {
+
+          document.getElementById(answer + 'Question').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion').style.display = "none";
+
+          }
+
+        }
+        function displayQuestion2(answer) {
+
+          document.getElementById(answer + 'Question2').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion2').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion2').style.display = "none";
+
+          }
+
+        }
+        function displayQuestion3(answer) {
+
+          document.getElementById(answer + 'Question3').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion3').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion3').style.display = "none";
+
+          }
+
+        }
+
+        function displayQuestion4(answer) {
+
+            document.getElementById(answer + 'Question4').style.display = "block";
+
+            if (answer == "yes") { // hide the div that is not selected
+
+                document.getElementById('noQuestion4').style.display = "none";
+
+            } else if (answer == "no") {
+
+                document.getElementById('yesQuestion4').style.display = "none";
+
+            }
+        }
+
+          function displayQuestion5(answer) {
+
+          document.getElementById(answer + 'Question5').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion5').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion5').style.display = "none";
+
+          }
+
+
+
+        }
+    </script>
+
+{% endblock %}
+
+{% block body %}
+
+
+    <header>
+        <img src="https://blog.cincinnatichildrens.org/wp-content/uploads/2016/04/Logo-High-Res.jpeg" alt="Logo" class="banner"/>
+    </header>
+
+
+    <main>
+        <form name="feedback" action="javascript:script">
+            <h2>Does the patient have symptoms of or require screening for covid?</h2>
+            <label><input type="radio" id="yes" name="q1" value="yes" onchange="displayQuestion(this.value)"/>Yes</label>
+            <label><input type="radio" id="no" name="q1" value="no" onchange="displayQuestion(this.value)"/>No</label>
+
+            <div id="yesQuestion" style="display:none;"><br/>
+                Consider COVID 19 PCR ($) testing as indicated per hospital guidelines
+            </div>
+
+            <div id="noQuestion" style="display:none;"><br/>
+                <h2>Is the patient intubated?</h2>
+                <label><input type="radio" id="yes" name="q2" value="yes" onchange="displayQuestion2(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q2" value="no" onchange="displayQuestion2(this.value)"/>No</label>
+            </div>
+
+
+            <div id="yesQuestion2" style="display:none;"><br/>
+                Consider RVP ($$$) if changes decision making or management
+            </div>
+
+            <div id="noQuestion2" style="display:none;"><br/>
+                <h2>Is the patient immunocompromised with respiratory symptoms?</h2>
+                <label><input type="radio" id="yes" name="q3" value="yes" onchange="displayQuestion3(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q3" value="no" onchange="displayQuestion3(this.value)"/>No</label>
+            </div>
+
+
+            <div id="yesQuestion3" style="display:none;"><br/>
+                Consider RVP ($$$) if changes decision making or management
+            </div>
+
+            <div id="noQuestion3" style="display:none;"><br/>
+                <h2>Does the patient have high fever, coryza, cough or symptoms concerning for influenza?</h2>
+                <label><input type="radio" id="yes" name="q4" value="yes" onchange="displayQuestion4(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q4" value="no" onchange="displayQuestion4(this.value)"/>No</label>
+            </div>
+
+
+            <div id="yesQuestion4" style="display:none;"><br/>
+                Consider Rapid Flu Antigen Testing ($)
+            </div>
+
+            <div id="noQuestion4" style="display:none;"><br/>
+                <h2>Is this a young infant with cough, respiratory distress or apnea concerning for pertussis or RSV?</h2>
+                <label><input type="radio" id="yes" name="q5" value="yes" onchange="displayQuestion5(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q5" value="no" onchange="displayQuestion5(this.value)"/>No</label>
+            </div>
+
+
+            <div id="yesQuestion5" style="display:none;"><br/>
+                Consider Rapid RSV Antigen Testing ($) and/or Pertussis PCR ($$)
+            </div>
+
+            <div id="noQuestion5" style="display:none;"><br/>
+                These patients should not require routine RVP($$$) Asthma, Bronchiolitis, Croup
+            </div>
+        </form>
+    </main>
+{% endblock %}

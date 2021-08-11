@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Daily Chest XRay</title>
+
+    <script id="test">
+        function displayQuestion(answer) {
+
+          document.getElementById(answer + 'Question').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion').style.display = "none";
+
+          }
+
+        }
+        function displayQuestion2(answer) {
+
+          document.getElementById(answer + 'Question2').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion2').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion2').style.display = "none";
+
+          }
+
+        }
+        function displayQuestion3(answer) {
+
+          document.getElementById(answer + 'Question3').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion3').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion3').style.display = "none";
+
+          }
+
+        }
+
+        function displayQuestion4(answer) {
+
+            document.getElementById(answer + 'Question4').style.display = "block";
+
+            if (answer == "yes") { // hide the div that is not selected
+
+                document.getElementById('noQuestion4').style.display = "none";
+
+            } else if (answer == "no") {
+
+                document.getElementById('yesQuestion4').style.display = "none";
+
+            }
+        }
+
+          function displayQuestion5(answer) {
+
+              document.getElementById(answer + 'Question5').style.display = "block";
+
+              if (answer == "yes") { // hide the div that is not selected
+
+                  document.getElementById('noQuestion5').style.display = "none";
+
+              } else if (answer == "no") {
+
+                  document.getElementById('yesQuestion5').style.display = "none";
+
+              }
+          }
+
+          function displayQuestion6(answer) {
+
+              document.getElementById(answer + 'Question6').style.display = "block";
+
+              if (answer == "yes") { // hide the div that is not selected
+
+                  document.getElementById('noQuestion6').style.display = "none";
+
+              } else if (answer == "no") {
+
+                  document.getElementById('yesQuestion6').style.display = "none";
+
+              }
+          }
+
+              function displayQuestion7(answer) {
+
+                  document.getElementById(answer + 'Question7').style.display = "block";
+
+                  if (answer == "yes") { // hide the div that is not selected
+
+                      document.getElementById('noQuestion7').style.display = "none";
+
+                  } else if (answer == "no") {
+
+                      document.getElementById('yesQuestion7').style.display = "none";
+
+                  }
+
+              }</script>
+
+{% endblock %}
+
+{% block body %}
+
+
+    <header>
+        <img src="https://blog.cincinnatichildrens.org/wp-content/uploads/2016/04/Logo-High-Res.jpeg" alt="Logo" class="banner"/>
+    </header>
+
+
+    <main>
+        <form name="feedback" action="javascript:script">
+            <h2>Is the patient > 10 kg?</h2>
+            <label><input type="radio" id="yes" name="q1" value="yes" onchange="displayQuestion(this.value)"/>Yes</label>
+            <label><input type="radio" id="no" name="q1" value="no" onchange="displayQuestion(this.value)"/>No</label>
+
+            <div id="noQuestion" style="display:none;"><br/>
+                Patient is not eligible for CXR.
+            </div>
+
+            <div id="yesQuestion" style="display:none;"><br/>
+                <h2>Are support devices, excluding an endotracheal tube, requiring daily CXR present?</h2>
+                <label><input type="radio" id="yes" name="q2" value="yes" onchange="displayQuestion2(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q2" value="no" onchange="displayQuestion2(this.value)"/>No</label>
+            </div>
+
+
+            <div id="yesQuestion2" style="display:none;"><br/>
+                Support devices are present -- patient is not eligible for CXR.
+            </div>
+
+            <div id="noQuestion2" style="display:none;"><br/>
+                <h2>Is the patient at low risk for endotracheal tube dislodgement or migration?</h2>
+                <label><input type="radio" id="yes" name="q3" value="yes" onchange="displayQuestion3(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q3" value="no" onchange="displayQuestion3(this.value)"/>No</label>
+            </div>
+
+
+            <div id="noQuestion3" style="display:none;"><br/>
+                Patient is not eligible for CXR.
+            </div>
+
+            <div id="yesQuestion3" style="display:none;"><br/>
+                <h2>FiO2 <= 40% AND PEEP <= 8?</h2>
+                <label><input type="radio" id="yes" name="q4" value="yes" onchange="displayQuestion4(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q4" value="no" onchange="displayQuestion4(this.value)"/>No</label>
+            </div>
+
+
+            <div id="noQuestion4" style="display:none;"><br/>
+                Patient is not eligible for CXR.
+            </div>
+
+            <div id="yesQuestion4" style="display:none;"><br/>
+                <h2>Patient intubated for respiratory status AND stable or improving for > 48 hours?</h2>
+                <label><input type="radio" id="yes" name="q5" value="yes" onchange="displayQuestion5(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q5" value="no" onchange="displayQuestion5(this.value)"/>No</label>
+            </div>
+
+
+            <div id="yesQuestion5" style="display:none;"><br/>
+                Patient is eligible for CXR every 48 hours.
+            </div>
+
+            <div id="noQuestion5" style="display:none;"><br/>
+                <h2>Patient intubated for neurologic status?</h2>
+                <label><input type="radio" id="yes" name="q6" value="yes" onchange="displayQuestion6(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q6" value="no" onchange="displayQuestion6(this.value)"/>No</label>
+            </div>
+
+            <div id="yesQuestion6" style="display:none;"><br/>
+                Patient is eligible for CXR every 24 hours.
+            </div>
+
+            <div id="noQuestion6" style="display:none;"><br/>
+                <h2>Patient intubated postoperatively?</h2>
+                <label><input type="radio" id="yes" name="q7" value="yes" onchange="displayQuestion7(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q7" value="no" onchange="displayQuestion7(this.value)"/>No</label>
+            </div>
+
+            <div id="yesQuestion7" style="display:none;"><br/>
+                Patient is eligible for CXR every 24 hours.
+            </div>
+
+            <div id="noQuestion7" style="display:none;"><br/>
+                Patient is not eligible for CXR.
+            </div>
+        </form>
+    </main>
+{% endblock %}

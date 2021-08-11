@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Value Script</title>
+
+    <script id="test">
+        function displayQuestion(answer) {
+
+          document.getElementById(answer + 'Question').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion').style.display = "none";
+
+          }
+
+        }
+        function displayQuestion2(answer) {
+
+          document.getElementById(answer + 'Question2').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion2').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion2').style.display = "none";
+
+          }
+
+        }
+        function displayQuestion3(answer) {
+
+          document.getElementById(answer + 'Question3').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion3').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion3').style.display = "none";
+
+          }
+
+        }
+
+        function displayQuestion4(answer) {
+
+            document.getElementById(answer + 'Question4').style.display = "block";
+
+            if (answer == "yes") { // hide the div that is not selected
+
+                document.getElementById('noQuestion4').style.display = "none";
+
+            } else if (answer == "no") {
+
+                document.getElementById('yesQuestion4').style.display = "none";
+
+            }
+        }
+
+          function displayQuestion5(answer) {
+
+          document.getElementById(answer + 'Question5').style.display = "block";
+
+          if (answer == "yes") { // hide the div that is not selected
+
+            document.getElementById('noQuestion5').style.display = "none";
+
+          } else if (answer == "no") {
+
+            document.getElementById('yesQuestion5').style.display = "none";
+
+          }
+
+
+
+        }
+
+
+          function displayQuestion6(answer) {
+
+              document.getElementById(answer + 'Question6').style.display = "block";
+
+              if (answer == "yes") { // hide the div that is not selected
+
+                  document.getElementById('noQuestion6').style.display = "none";
+
+              } else if (answer == "no") {
+
+                  document.getElementById('yesQuestion6').style.display = "none";
+
+              }
+          }
+
+              function displayQuestion7(answer) {
+
+                  document.getElementById(answer + 'Question7').style.display = "block";
+
+                  if (answer == "yes") { // hide the div that is not selected
+
+                      document.getElementById('noQuestion7').style.display = "none";
+
+                  } else if (answer == "no") {
+
+                      document.getElementById('yesQuestion7').style.display = "none";
+
+                  }
+
+              }
+    </script>
+
+{% endblock %}
+
+{% block body %}
+
+
+    <header>
+        <img src="https://blog.cincinnatichildrens.org/wp-content/uploads/2016/04/Logo-High-Res.jpeg" alt="Logo" class="banner"/>
+    </header>
+
+
+    <main>
+        <form name="feedback" action="javascript:script">
+            <h2>Does the patient meet the work-up threshold?</h2>
+            <b>Fever Work-Up Threshold:</b> Age <26 Days 38C, Immunocomprimised 38C, All others >38.5C, Consider for any patient <35.5C<br>
+            <label><input type="radio" id="yes" name="q1" value="yes" onchange="displayQuestion(this.value)"/>Yes</label>
+            <label><input type="radio" id="no" name="q1" value="no" onchange="displayQuestion(this.value)"/>No</label>
+
+            <div id="noQuestion" style="display:none;"><br/>
+                No test needed.
+            </div>
+
+            <div id="yesQuestion" style="display:none;"><br/>
+                <h2>First fever, new fever after 48 hrs, or new instability?</h2>
+                <label><input type="radio" id="yes" name="q2" value="yes" onchange="displayQuestion2(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q2" value="no" onchange="displayQuestion2(this.value)"/>No</label>
+            </div>
+
+
+            <div id="yesQuestion2" style="display:none;"><br/>
+                <b>Evaluate possible sources:</b> Consider imaging as needed and complete a full updated documented physical exam.
+                See evaluation of other source of <a href="/Fever">fever or infection on the checklist</a>. Culture any suspected sources. <br>
+                <h2>Is the patient immunocompromised?</h2>
+                <label><input type="radio" id="yes" name="q7" value="yes" onchange="displayQuestion7(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q7" value="no" onchange="displayQuestion7(this.value)"/>No</label>
+            </div>
+
+            <div id="noQuestion2" style="display:none;"><br/>
+                <h2>Is the patient immunocompromised?</h2>
+                <label><input type="radio" id="yes" name="q3" value="yes" onchange="displayQuestion3(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q3" value="no" onchange="displayQuestion3(this.value)"/>No</label>
+            </div>
+
+
+            <div id="yesQuestion3" style="display:none;"><br/>
+                Obtain a single broad sample from central line or peripheral q48h
+            </div>
+
+            <div id="noQuestion3" style="display:none;"><br/>
+                <a href="/Fever">Complete the fever/sepsis checklist</a>
+                <h2>Blood culture indicated?</h2>
+                <label><input type="radio" id="yes" name="q4" value="yes" onchange="displayQuestion4(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q4" value="no" onchange="displayQuestion4(this.value)"/>No</label>
+            </div>
+
+
+            <div id="noQuestion4" style="display:none;"><br/>
+                No test needed.
+            </div>
+
+            <div id="yesQuestion4" style="display:none;"><br/>
+                <h2>Plan to broaden coverage?</h2>
+                <label><input type="radio" id="yes" name="q5" value="yes" onchange="displayQuestion5(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q5" value="no" onchange="displayQuestion5(this.value)"/>No</label>
+            </div>
+
+
+            <div id="yesQuestion5" style="display:none;"><br/>
+                <b>Evaluate possible sources:</b> Consider imaging as needed and complete a full updated documented physical exam.
+                See evaluation of other source of <a href="/Fever">fever or infection on the checklist</a>. Culture any suspected sources. <br>
+                <h2>Is the patient immunocompromised?</h2>
+                <label><input type="radio" id="yes" name="q7" value="yes" onchange="displayQuestion7(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q7" value="no" onchange="displayQuestion7(this.value)"/>No</label>
+            </div>
+
+            <div id="noQuestion5" style="display:none;"><br/>
+                <h2>Instability with line use?</h2>
+                <label><input type="radio" id="yes" name="q6" value="yes" onchange="displayQuestion6(this.value)"/>Yes</label>
+                <label><input type="radio" id="no" name="q6" value="no" onchange="displayQuestion6(this.value)"/>No</label>
+            </div>
+
+            <div id="yesQuestion6" style="display:none;"><br/>
+                Culture central catheter plus a peripheral source. Consider catheter removal.
+            </div>
+
+            <div id="noQuestion6" style="display:none;"><br/>
+                <b>Draw PERIPHERAL culture every 48h.</b>
+                (After 2 unsuccessful peripheral attempts, discuss obtaining arterial blood culture with fellow or attending.
+                If decision made to not obtain arterial blood culture OR after 1 unsuccessful arterial attempt, consider a central culture after discussion with fellow or attending.
+            </div>
+
+            <div id="yesQuestion7" style="display:none;"><br/>
+                <b>Consider Sepsis Huddle</b> Draw simultaneous blood cultures from every lumen in use and consider a peripheral source.
+                Begin appropriate antibiotics per <a href="/Fever">sepsis algorithm</a>.
+            </div>
+
+            <div id="noQuestion7" style="display:none;"><br/>
+                <b>Consider Sepsis Huddle</b> Draw optimal volume peripheral blood culture.
+                Begin appropriate antibiotics per <a href="/Fever">sepsis algorithm</a>.
+            </div>
+
+
+        </form>
+    </main>
+{% endblock %}
